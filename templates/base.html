@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Mi Ecommerce{% endblock %}</title>
+</head>
+
+<body>
+
+    <header>
+
+        <h2>Mi Ecommerce</h2>
+
+        <nav>
+            <a href="/">Inicio</a> |
+            <a href="/login">Login</a> |
+            <a href="/productos">Productos</a>
+        </nav>
+
+        <hr>
+
+    </header>
+
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+    <hr>
+
+    <footer>
+
+        <p>© 2026 Mi Ecommerce</p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -6,7 +6,7 @@ __pycache__/
 *.py[cod]
 
 # Base de datos SQLite
-*.db
+instance/ecommerce.db
 
 # Variables de entorno
 .env

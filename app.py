@@ -1,6 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect, url_for
 
 app = Flask(__name__)
+
+app.secret_key = "clave-por-mientras-xd"
+
+USUARIO_PRUEBA = "hector@gmail.com"
+PASSWORD_PRUEBA = "123456"
 
 @app.route("/")
 def inicio():
@@ -12,12 +17,17 @@ def login():
     if request.method == "POST":
 
         correo = request.form["correo"]
-
         password = request.form["password"]
 
-        print(correo)
+        if (
+            correo == USUARIO_PRUEBA
+            and password == PASSWORD_PRUEBA
+        ):
+            flash("Inicio de sesión correcto.", "success")
+            return redirect(url_for("inicio"))
 
-        print(password)
+        else:
+            flash("Correo o contraseña incorrectos.", "error")
 
     return render_template("login.html")
 

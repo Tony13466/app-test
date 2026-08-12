@@ -26,9 +26,25 @@
 
     <main>
 
-        {% block content %}
+        {% with mensajes = get_flashed_messages(with_categories=true) %}
 
-        {% endblock %}
+        {% if mensajes %}
+
+            {% for categoria, mensaje in mensajes %}
+
+                <p>
+                    {{ mensaje }}
+                </p>
+
+            {% endfor %}
+
+        {% endif %}
+
+    {% endwith %}
+
+    {% block content %}
+
+    {% endblock %}
 
     </main>
 

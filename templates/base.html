@@ -15,9 +15,15 @@
         <h2>Mi Ecommerce</h2>
 
         <nav>
-            <a href="/">Inicio</a> |
-            <a href="/login">Login</a> |
-            <a href="/products">Productos</a>     
+            <a href="{{ url_for('inicio') }}">Inicio</a> | 
+
+            {% if "usuario" in session %}
+                <a href="{{ url_for('perfil') }}">Mi perfil</a> |
+                <a href="{{ url_for('logout') }}">Cerrar Sesión</a> |
+            
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+            {% endif %}
         </nav>
 
         <hr>
